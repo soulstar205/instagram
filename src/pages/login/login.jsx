@@ -84,7 +84,7 @@ const Login =()=>{
                     <div className="box goto">
                         <p>
                             Don't have an account?
-                            <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a>
+                            <a href="https://www.instagram.com/accounts/emailsignup/"> Sign up</a>
                         </p>
                     </div>
                     <div className="app-download">
