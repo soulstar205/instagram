@@ -1,0 +1,8 @@
+[[redirects]]
+  from = "/*"
+  to = "/public/index.html"
+  status = 200
+
+[[headers]]
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
