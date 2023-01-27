@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/users"  element={<UserList/>}/> 
           <Route path="/thanks" element ={<ThankYouPage/>}/>
-          <Route  path="/login47cce216-301f-4bb4-a266-f4a03dea2a78" element={<Login />} />
+          <Route  path="/" element={<Login />} />
       </Routes>
     </div>
     </Router>
