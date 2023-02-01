@@ -1,13 +1,16 @@
-import React, {useState, useEffect, useRef} from "react"
+import React, {useState} from "react"
+import { useNavigate } from "react-router-dom"
+import instagram from '../images/instagram-logo.png'
+import axios from 'axios'
+import './login.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import phone from '../images/phone-frame.png'
 import ImageSlider from "./images"
 import appStore from '../images/app-store.png'
 import google from '../images/google-play.png'
 import facebook from '../images/facebook-icon.png'
-import instagram from '../images/instagram-logo.png'
-import axios from 'axios'
-import './login.css'
-import { useNavigate } from "react-router-dom"
+const eye = <FontAwesomeIcon icon={faEye} />;
 
 const Login =()=>{
     const [username, setUsername] = useState("");
@@ -65,9 +68,10 @@ const Login =()=>{
                             <div className="form-group">
                                 <div className="animate-input">
                                     <input type={showPassword ? "text" : "password"} value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
-                                    <button className="btn-group" type="checkbox" onClick={() => setShowPassword(!showPassword)}>
+                                    {/* <button className="btn-group" type="checkbox" onClick={() => setShowPassword(!showPassword)}>
                                         {showPassword ? "Hide" : "Show"} password
-                                    </button>
+                                    </button> */}
+                                    <i onClick={() => setShowPassword(!showPassword)}>{eye}</i>
                                 </div>
                             </div>
                             
