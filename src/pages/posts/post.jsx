@@ -26,7 +26,7 @@ function UserList() {
     }, []);
 
     return (
-        <div className="bg-gray-500 flex flex-col items-center justify-center h-screen mt-14">
+        <div className="bg-gray-500 flex flex-col items-center justify-center h-screen post-userss p-9">
         <h1 className="text-lg font-medium text-center mb-2 mt-8">New Users</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 ">
             {users.map(user => (

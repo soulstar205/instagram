@@ -32,7 +32,8 @@
     justify-content: center;
 }
 .h-screen {
-    height: 100vh;
+    height: 100%;
+    padding-top: 20px;
 }
 .grid {
     display: grid;
