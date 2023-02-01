@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter&family=Oswald:wght@300&family=Playfair+Display:ital@1&display=swap');
 
 .fancy-text{
-    font-size: 50px;
+    font-size: 40px;
     color: purple;
     font-family: 'Comforter', cursive;
     font-family: 'Oswald', sans-serif;
@@ -12,5 +12,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
 }
